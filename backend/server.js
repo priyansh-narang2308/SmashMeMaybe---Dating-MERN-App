@@ -11,7 +11,7 @@ import userRoutes from "./routes/userRoutes.js";
 import matchRoutes from "./routes/matchRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 
-import { connectDB } from "./config/db.js";
+import  connectDB  from "./config/db.js";
 import { initializeSocket } from "./socket/socket.server.js";
 
 dotenv.config();

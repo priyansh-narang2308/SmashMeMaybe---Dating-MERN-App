@@ -1,6 +1,6 @@
 import express from "express";
-import { login, logout, signup } from "../controllers/authController.js";
-import { protectedRoute } from "../middleware/auth.js";
+import { signup, login, logout } from "../controllers/authController.js";
+import { protectRoute } from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -8,11 +8,11 @@ router.post("/signup", signup);
 router.post("/login", login);
 router.post("/logout", logout);
 
-router.get("/me", protectedRoute, (req, res) => {
+router.get("/me", protectRoute, (req, res) => {
     res.send({
         success: true,
-        user: req.user
+        user: req.user,
     });
 });
 
-export default router;  
+export default router;
